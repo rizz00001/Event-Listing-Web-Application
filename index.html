@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Discover Amazing Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎉</text></svg>">
+</head>
+<body>
+    <!-- Hero Section with Animated Background -->
+    <header class="hero" id="home">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🎉</span>
+                <span class="logo-text">EventHub</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#categories" class="nav-link">Categories</a></li>
+                <li><a href="#favorites" class="nav-link">Favorites</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="animate-fade-in">Discover Amazing Events</h1>
+            <p class="animate-slide-up">Find concerts, sports, arts & theater events near you</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search events, artists, venues..." aria-label="Search events">
+                <input type="text" id="cityInput" placeholder="Enter city name" aria-label="City">
+                <button id="searchBtn" class="search-button">
+                    <span class="search-icon">🔍</span>
+                    <span class="search-text">Search</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Animated Particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </header>
+
+    <!-- Categories/Filter Section -->
+    <section class="filters-section" id="categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-category="">
+                    <span class="filter-icon">🌟</span>
+                    <span>All Events</span>
+                </button>
+                <button class="filter-btn" data-category="music">
+                    <span class="filter-icon">🎵</span>
+                    <span>Music</span>
+                </button>
+                <button class="filter-btn" data-category="sports">
+                    <span class="filter-icon">⚽</span>
+                    <span>Sports</span>
+                </button>
+                <button class="filter-btn" data-category="arts">
+                    <span class="filter-icon">🎭</span>
+                    <span>Arts & Theater</span>
+                </button>
+                <button class="filter-btn" data-category="family">
+                    <span class="filter-icon">👨‍👩‍👧</span>
+                    <span>Family</span>
+                </button>
+                <button class="filter-btn" data-category="film">
+                    <span class="filter-icon">🎬</span>
+                    <span>Film</span>
+                </button>
+            </div>
+            
+            <div class="sort-filter">
+                <label for="sortBy">Sort by:</label>
+                <select id="sortBy">
+                    <option value="relevance">Relevance</option>
+                    <option value="date">Date (Earliest)</option>
+                    <option value="name">Name (A-Z)</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div class="loader-container" id="loaderContainer">
+        <div class="loader"></div>
+        <p class="loader-text">Loading amazing events...</p>
+    </div>
+
+    <!-- Events Grid Section -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="events-header">
+                <h2 class="section-title">Featured Events</h2>
+                <div class="results-count" id="resultsCount"></div>
+            </div>
+            <div class="events-container" id="eventsContainer">
+                <!-- Events will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagination -->
+    <div class="pagination-container">
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <!-- Favorites Section -->
+    <section class="favorites-section" id="favorites">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="favorites-icon">❤️</span>
+                Your Favorite Events
+            </h2>
+            <div class="favorites-container" id="favoritesContainer">
+                <div class="empty-favorites">
+                    <div class="empty-icon">💝</div>
+                    <h3>No favorites yet!</h3>
+                    <p>Click the heart icon on events to save them here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Modal -->
+    <div class="modal" id="eventModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <span>✕</span>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Event details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🎉</span>
+                    <span class="logo-text">EventHub</span>
+                </div>
+                <p class="footer-text">Powered by Ticketmaster Discovery API</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#events">Events</a>
+                    <a href="#favorites">Favorites</a>
+                </div>
+            </div>
+            <p class="footer-copyright">© 2025 EventHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
